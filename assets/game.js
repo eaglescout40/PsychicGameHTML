@@ -14,9 +14,9 @@ function newGame() {
   resetGuesses();
   generateRandomLetter();
   console.log(randomLetter);
-  displayOnScreen("wins", `Wins: ${String(winCount)}`);
-  displayOnScreen("losses", `Losses: ${String(lossCount)}`);
-  displayOnScreen("guessesleft", `Guesses Left: ${String(guessesLeft)}`);
+  displayOnScreen("wins", "Wins: ${String(winCount)}");
+  displayOnScreen("losses", "Losses: ${String(lossCount)}");
+  displayOnScreen("guessesleft", "Guesses Left: ${String(guessesLeft)}");
 }
 
 function onKeyPress(key) {
@@ -25,15 +25,15 @@ function onKeyPress(key) {
     guessedLetters.push(letter);
     printKeyPressed(letter);
     guessesLeft--;
-    displayOnScreen("guessesleft", `Guesses Left: ${String(guessesLeft)}`);
+    displayOnScreen("guessesleft", "Guesses Left: ${String(guessesLeft)}");
     if (String(letter) == String(randomLetter)) {
       winCount++;
-      displayOnScreen("wins", `Wins: ${String(winCount)}`);
+      displayOnScreen("wins", "Wins: ${String(winCount)}");
       newGame();
     }
     if (guessesLeft === 0) {
       lossCount++;
-      displayOnScreen("losses", `Losses: ${String(lossCount)}`);
+      displayOnScreen("losses", "Losses: ${String(lossCount)}");
       newGame();
     }
   }
@@ -53,8 +53,8 @@ function printKeyPressed(letter) {
 
 function resetGuesses() {
   guessesLeft = defaultGuessesLeft;
-  displayOnScreen("guessesleft", `Losses: ${String(guessesLeft)}`);
-  displayOnScreen("guessessofar", `Letters guessed: `);
+  displayOnScreen("guessesleft", "Losses: ${String(guessesLeft)}");
+  displayOnScreen("guessessofar", "Letters guessed: ");
 }
 
 function displayOnScreen(divContainer, content) {
